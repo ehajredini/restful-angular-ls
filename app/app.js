@@ -4,7 +4,7 @@ angular
         'ui.bootstrap'
     ])
 
-    .config(function($stateProvider) {
+    .config(function($stateProvider, $urlRouterProvider) {
         var users = {
             name: 'users',
             url: '/users',
@@ -41,5 +41,5 @@ angular
         $stateProvider.state(usersAdd);
         $stateProvider.state(usersDetails);
         $stateProvider.state(usersUpdate);
-        $stateProvider.otherwise(users);
+        $urlRouterProvider.otherwise('/users');
     });
