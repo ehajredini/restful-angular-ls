@@ -1,0 +1,40 @@
+<h1>User Details</h1>
+<button class="btn btn-primary" ui-sref="users">Users</button>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+        <th>Github</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>{{ userDetailsCtrl.user.id }}</td>
+        <td>{{ userDetailsCtrl.user.firstName }}</td>
+        <td>{{ userDetailsCtrl.user.lastName }}</td>
+        <td>{{ userDetailsCtrl.user.email }}</td>
+        <td>{{ userDetailsCtrl.user.gitHubId }}</td>
+    </tr>
+    </tbody>
+</table>
+
+<h1>Public Repos</h1>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="github in userDetailsCtrl.github">
+        <td>{{ github.name }}</td>
+        <td>{{ github.description }}</td>
+    </tr>
+    </tbody>
+</table>

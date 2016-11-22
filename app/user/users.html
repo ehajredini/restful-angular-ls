@@ -1,0 +1,20 @@
+<h1>Users</h1>
+<button class="btn btn-primary" ui-sref="add">Add User</button>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="user in userCtrl.users">
+        <td>{{ user.firstName }}</td>
+        <td>{{ user.lastName }}</td>
+        <td><a class="btn mini blue-stripe" ui-sref="update({id: user.id})">Edit</a></td>
+        <td><a class="btn mini blue-stripe" ui-sref="details({id: user.id})">Details</a></td>
+        <td><a class="btn mini blue-stripe" ng-click="userCtrl.remove(user.id)">Delete</a></td>
+    </tr>
+    </tbody>
+</table>
